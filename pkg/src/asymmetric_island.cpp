@@ -9,6 +9,8 @@
 
 using namespace Rcpp;
 
+
+// Wow look at all those is and js!
 /* Computes the log likelihood of ST j in source i */
 logdouble Island::known_source_loglik_ij(int i, int j, const NumericMatrix &A, const NumericArray3 &b, const NumericMatrix &M, const NumericMatrix &R) {
   double punique = M(i,0);
