@@ -32,10 +32,12 @@ logdouble Island::known_source_loglik_ij(int i, int j, const NumericMatrix &A, c
     pdiff[l] = b_;
   }
   std::vector<logdouble> l_j(ng);
-  for (int ii = 0; ii < ng; ii++) {						//	Cycle through source of the clonal frame
+  for (int ii = 0; ii < ng; ii++)		//	Cycle through source of the clonal frame
+  {
     double mii = A(i,ii);
     std::vector<logdouble> l_ii(nST[ii]);      // allocate the vector
-    for (int jj = 0; jj < nST[ii]; jj++) {				//	Cycle through each ST from that source
+    for (int jj = 0; jj < nST[ii]; jj++) 	//	Cycle through each ST from that source
+    {
       double ncopiesjj = (i==ii && j==jj) ? ABUN[ii][jj]-std::min(ABUN[ii][jj],1.0)
         : ABUN[ii][jj]; // NOTE: This can be zero.
       logdouble l_jj = mii;
